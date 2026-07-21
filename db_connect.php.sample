@@ -1,0 +1,6 @@
+<?php
+$dsn = 'mysql:dbname=データベース名;host=localhost';
+$user = '********';
+$password = '********';
+$pdo = new PDO($dsn, $user, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+?>
