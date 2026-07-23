@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    color: #333;
+}
+
+/* 教材カード */
+.material-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 進捗バーの外枠 */
+.progress-bar-bg {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    height: 20px;
+    margin: 8px 0;
+}
+
+/* 進捗バーの中身（実際の進捗）*/
+.progress-bar-fill {
+    background-color: #4caf50;
+    border-radius: 4px;
+    height: 20px;
+}
+
+/* フォーム */
+form {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    margin: 4px 0 8px 0;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}

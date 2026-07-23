@@ -43,10 +43,6 @@ $sql = 'SELECT * FROM materials';
 $stmt = $pdo->query($sql);
 $results = $stmt->fetchAll();
 foreach ($results as $row) {
-    echo $row['id'] . ',';
-    echo $row['title'] . ',';
-    echo $row['total_amount'] . '<br>';
-
     // その教材の最新進捗を取ってくる
     $sql2 = 'SELECT * FROM progress WHERE material_id = :material_id ORDER BY created_at DESC LIMIT 1';
     $stmt2 = $pdo->prepare($sql2);
@@ -57,12 +53,23 @@ foreach ($results as $row) {
     if ($progress_row) {
         $total_in_minutes = $row['total_amount'] * 60; // 時間 => 分に変換
         $percent = round($progress_row['done_amount'] / $total_in_minutes * 100);
+        echo '<div class="material-card">';
+        echo '<h3>' . $row['title'] . '</h3>';
+        echo $row['total_amount'] . '時間<br>';
         echo '進捗： ' . $progress_row['done_amount'] . '分 / ';
-        echo $row['total_amount'] . '時間';
-        echo ' (' . $percent . '%)<br>';
+        echo $row['total_amount'] . '時間 (' . $percent . '%)<br>';
+        // 進捗バー
+        echo '<div class="progress-bar-bg">';
+        echo '<div class="progress-bar-fill" style="width:' . $percent . '%"></div>';
+        echo '</div>';
         echo 'メモ： ' . $progress_row['memo'] . '<br>';
+        echo '</div>';
     } else {
+        echo '<div class="material-card">';
+        echo '<h3>' . $row['title'] . '</h3>';
+        echo $row['total_amount'] . '時間<br>';
         echo '進捗： まだ記録がありません<br>';
+        echo '</div>';
     }
 
     echo "<hr>";
@@ -76,6 +83,7 @@ foreach ($results as $row) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Progress App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
