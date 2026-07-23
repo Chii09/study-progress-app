@@ -63,12 +63,14 @@ foreach ($results as $row) {
         echo '<div class="progress-bar-fill" style="width:' . $percent . '%"></div>';
         echo '</div>';
         echo 'メモ： ' . $progress_row['memo'] . '<br>';
+        echo '<a href="m6_history.php?material_id=' . $row['id'] . '">履歴を見る</a>';
         echo '</div>';
     } else {
         echo '<div class="material-card">';
         echo '<h3>' . $row['title'] . '</h3>';
         echo $row['total_amount'] . '時間<br>';
         echo '進捗： まだ記録がありません<br>';
+        echo '<a href="m6_history.php?material_id=' . $row['id'] . '">履歴を見る</a>';
         echo '</div>';
     }
 

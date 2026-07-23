@@ -50,6 +50,11 @@ input, textarea {
     border-radius: 4px;
 }
 
+textarea {
+    display: block;
+    width: 300px;
+}
+
 input[type="submit"] {
     background-color: #4caf50;
     color: white;
