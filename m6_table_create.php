@@ -10,5 +10,18 @@ $sql = "CREATE TABLE IF NOT EXISTS materials"
         . ");";
 
 $stmt = $pdo->query($sql);
-echo "テーブル作成完了";
+echo "materialsテーブル作成完了<br>";
+
+// 2つ目：progress
+$sql = "CREATE TABLE IF NOT EXISTS progress"
+        ." ("
+        . "id INT AUTO_INCREMENT PRIMARY KEY,"
+        . "material_id INT,"
+        . "done_amount INT,"
+        . "memo TEXT,"
+        . "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        . ");";
+
+$stmt = $pdo->query($sql);
+echo "progress テーブル作成完了<br>";
 ?>
