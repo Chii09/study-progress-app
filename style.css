@@ -63,3 +63,15 @@ input[type="submit"] {
     cursor: pointer;
     border-radius: 4px;
 }
+
+h1 {
+    color: #2e7d32;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}

@@ -89,6 +89,8 @@ foreach ($results as $row) {
 </head>
 
 <body>
+    <h1>学習進捗管理</h1>
+    <p class="subtitle">複数の教材の進捗を記録して、積み上げを見える化する</p>
     <form method="post" action="">
         教材名：<input type="text" name="title">
         全体量：<input type="number" name="total_amount">
